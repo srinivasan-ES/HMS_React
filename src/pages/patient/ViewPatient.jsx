@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { getPatientById, getPatientByMobile, updatePatient } from "../api/PatientApi";
+import { getPatientById, getPatientByMobile, updatePatient } from "../../api/PatientApi";
 
 function ViewPatient() {
   const [searchId, setSearchId] = useState("");

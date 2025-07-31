@@ -1,10 +1,10 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
-import PatientRegistration from "../pages/PatientRegistration";
-import PatientList from "../pages/PatientList";
-import EditPatient from "../pages/EditPatient";
-import ViewPatient from "../pages/ViewPatient";
-import Home from "../pages/Home";
+import PatientRegistration from "../pages/patient/PatientRegistration";
+import PatientList from "../pages/patient/PatientList";
+import EditPatient from "../pages/patient/EditPatient";
+import ViewPatient from "../pages/patient/ViewPatient";
+import Home from "../pages/patient/Home";
 function AppRoutes() {
   return (
 
