@@ -1,7 +1,8 @@
+import React from "react";
+import AppRoutes from "./routes/AppRoutes";
 import {  Routes, Route ,Link } from 'react-router-dom';
-import Home from './pages/Home';
-import PatientRegistration from './pages/PatientRegistration';
-import PatientList from "./pages/PatientList";
+
+
 function App() {
   return (
   <div>
@@ -9,12 +10,9 @@ function App() {
       <Link to="/" style={{ marginRight: '10px'}}>Home</Link>
       <Link to="/PatientRegistration" style={{ marginRight: '10px'}}>Patient Registration</Link>
       <Link to="/PatientList" style={{ marginRight: '10px'}}>Patient List</Link>
+      <Link to="/view-patient" style={{ marginRight: '10px'}}>View Patient</Link>
     </nav>
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/PatientRegistration" element={<PatientRegistration />} />
-      <Route path="/PatientList" element={<PatientList />} />
-    </Routes>
+    <AppRoutes/>
   </div>
 
   );
