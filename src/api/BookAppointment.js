@@ -24,3 +24,14 @@ export const retrieveAppointment = async (appointmentId) => {
     throw error;
   }
 };
+
+export const retrieveByDoctorId = async (doctorId) => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/v1/get-appointmentByDoctorId/${doctorId}`
+    );
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

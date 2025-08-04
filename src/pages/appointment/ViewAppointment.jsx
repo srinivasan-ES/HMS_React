@@ -1,26 +1,32 @@
 import React, { useState } from "react";
-import { retrieveAppointment } from '../../api/BookAppointment';
-import axios from 'axios';
+import { retrieveAppointment } from "../../api/BookAppointment";
+
 
 function ViewAppointment() {
   const [searchId, setSearchId] = useState("");
+  const [searchDoctorId, setSearchDoctorId] = useState("");
   const [formData, setFormData] = useState(null);
   const [error, setError] = useState("");
 
   const handleSearch = async () => {
-    try {
-      setError("");
-      let response;
-
-      if (searchId) {
-         response = await retrieveAppointment(searchId);
-      }  
-      setFormData(response);
-    } catch (err) {
-      setFormData(null);
-      setError("Appointment not found");
-    }
-  };
+      try {
+        setError("");
+        let response;
+  
+        if (searchId) {
+          response = await retrieveAppointment(searchId);
+        } else if (searchDoctorId) {
+          response = await retrieveByDoctorId(searchDoctorId);
+        } else {
+          setError("Enter Doctor ID or Appointment Number");
+          return;
+        }
+        setFormData(response);
+      } catch (err) {
+        setFormData(null);
+        setError("Appointment not found");
+      }
+    };
 
 
   return (
@@ -28,11 +34,17 @@ function ViewAppointment() {
       <h2>View Appointment Details</h2>
       <input
         type="text"
-        placeholder="Search by Doctor ID"
+        placeholder="Search by Appointment ID"
         value={searchId}
         onChange={(e) => setSearchId(e.target.value)}
       />
-   
+      <span> OR </span>
+      <input
+        type="text"
+        placeholder="Search by Doctor ID"
+        value={searchDoctorId}
+        onChange={(e) => setSearchDoctorId(e.target.value)}
+      />
       <button onClick={handleSearch}>Search</button>
       {error && <p style={{ color: "red" }}>{error}</p>}
       
