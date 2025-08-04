@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { getPatientById, getPatientByMobile, updatePatient } from "../../api/PatientApi";
+//import { setSelectedPatientId } from "../../api/Storage1";
 
 function ViewPatient() {
   const [searchId, setSearchId] = useState("");
@@ -21,6 +22,7 @@ function ViewPatient() {
         return;
       }
       setFormData(response.data);
+      localStorage.setItem("setSelectedPatientId",response.data.patientId);
     } catch (err) {
       setFormData(null);
       setError("Patient not found");

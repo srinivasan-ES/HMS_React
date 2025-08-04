@@ -7,6 +7,7 @@ function SideBarLayout() {
 
   const [showPatients,setShowPatients] = useState(false);
   const [showDoctors,setShowDoctors] = useState(false);
+  const [showAppointments,setShowAppointments] = useState(false);
   return (
     <div className="layout">
       <aside className="sidebar">
@@ -35,7 +36,17 @@ function SideBarLayout() {
               <Link to="/view-doctor" style={{ marginRight: '10px'}}>View Doctor</Link>
             </div>)}
           </div>
-          <Link to="/appointments">Appointments</Link>
+          <div className="dropdown">
+            <div onClick={() => setShowAppointments(!showAppointments)} style={{ cursor: 'pointer' }}>
+          Appointment ▼
+        </div>
+        {showAppointments && (
+            <div className="dropdown-content">
+              <Link to="/AppointmentRegistration" style={{ marginRight: '10px'}}>Book Appointment</Link>
+              <Link to="/AppointmentList" style={{ marginRight: '10px'}}>Appointment List</Link>       
+              <Link to="/ViewAppointment" style={{ marginRight: '10px'}}>View Appointment</Link>
+            </div>)}
+          </div>
           <Link to="/billing">Billing</Link>
         </nav>
       </aside>
