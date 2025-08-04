@@ -13,9 +13,8 @@ function SideBarLayout() {
   return (
     <div className="layout">
       <aside className="sidebar">
-        <h2>HMS</h2>
         <nav>
-          <Link to="/" style={{ marginRight: '10px'}}>Home</Link>
+          <h2><Link to="/" style={{ marginRight: '10px'}}>HMS</Link></h2>
           <div className="dropdown">
              <div onClick={() => setShowPatients(!showPatients)} style={{ cursor: 'pointer' }}>
           Patients ▼
