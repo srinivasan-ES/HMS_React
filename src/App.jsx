@@ -1,5 +1,5 @@
 import React from "react";
-import AppRoutes from "./routes1/AppRoutes";
+import AppRoutes from "./routes/AppRoutes";
 import {  Routes, Route ,Link } from 'react-router-dom';
 
 

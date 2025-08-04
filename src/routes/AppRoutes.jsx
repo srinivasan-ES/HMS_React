@@ -7,10 +7,10 @@ import PatientList from "../pages/patient/PatientList";
 import EditPatient from "../pages/patient/EditPatient";
 import ViewPatient from "../pages/patient/ViewPatient";
 import Home from "../pages/patient/Home";
-import DoctorRegistration from "../pages/Doctor/DoctorRegistration";
-import EditDoctor from "../pages/Doctor/EditDoctor";
-import ViewDoctor from "../pages/Doctor/ViewDoctor";
-import DoctorList from "../pages/Doctor/DoctorList";
+import DoctorRegistration from "../pages/doctor/DoctorRegistration";
+import EditDoctor from "../pages/doctor/EditDoctor";
+import ViewDoctor from "../pages/doctor/ViewDoctor";
+import DoctorList from "../pages/doctor/DoctorList";
 
 
 function AppRoutes() {
