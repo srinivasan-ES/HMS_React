@@ -8,6 +8,8 @@ function SideBarLayout() {
   const [showPatients,setShowPatients] = useState(false);
   const [showDoctors,setShowDoctors] = useState(false);
   const [showAppointments,setShowAppointments] = useState(false);
+  const [prescription,setPrescription] = useState(false);
+  const [billing,setBilling] = useState(false);
   return (
     <div className="layout">
       <aside className="sidebar">
@@ -25,6 +27,7 @@ function SideBarLayout() {
               <Link to="/view-patient" style={{ marginRight: '10px'}}>View Patient</Link>
             </div>)}
         </div>
+        <br />
           <div className="dropdown">
             <div onClick={() => setShowDoctors(!showDoctors)} style={{ cursor: 'pointer' }}>
           Doctors ▼
@@ -36,6 +39,7 @@ function SideBarLayout() {
               <Link to="/view-doctor" style={{ marginRight: '10px'}}>View Doctor</Link>
             </div>)}
           </div>
+          <br />
           <div className="dropdown">
             <div onClick={() => setShowAppointments(!showAppointments)} style={{ cursor: 'pointer' }}>
           Appointment ▼
@@ -47,7 +51,28 @@ function SideBarLayout() {
               <Link to="/ViewAppointment" style={{ marginRight: '10px'}}>View Appointment</Link>
             </div>)}
           </div>
-          <Link to="/billing">Billing</Link>
+          <br />
+          <div className="dropdown">
+            <div onClick={() => setPrescription(!prescription)} style={{ cursor: 'pointer' }}>
+            Prescription ▼
+        </div>
+        {prescription && (
+            <div className="dropdown-content">
+              <Link to="/AddPrescription" style={{ marginRight: '10px'}}>Add Prescription</Link>
+              <Link to="/ViewPrescription" style={{ marginRight: '10px'}}>View Prescription</Link>
+            </div>)}
+          </div>
+          <br />
+          <div className="dropdown">
+            <div onClick={() => setBilling(!billing)} style={{ cursor: 'pointer' }}>
+            Billing ▼
+        </div>
+        {billing && (
+            <div className="dropdown-content">
+              <Link to="/GenerateBill" style={{ marginRight: '10px'}}>Generate Bill</Link>
+              <Link to="/ViewBilling" style={{ marginRight: '10px'}}>View Billing</Link>
+            </div>)}
+          </div>
         </nav>
       </aside>
       <main className="main-content">

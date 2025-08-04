@@ -14,6 +14,9 @@ import DoctorList from "../pages/Doctor/DoctorList";
 import AppointmentRegistration from "../pages/appointment/AppointmentRegistration";
 import AppointmentList from "../pages/appointment/AppointmentList";
 import ViewAppointment from "../pages/appointment/ViewAppointment"; 
+import AddPrescription from "../pages/Prescription/AddPrescription";
+import ViewPrescription from "../pages/Prescription/ViewPrescription";
+import GenerateBill from "../pages/Billing/GenerateBill";
 
 function AppRoutes() {
   return (
@@ -32,6 +35,9 @@ function AppRoutes() {
       <Route path="/AppointmentRegistration" element={<AppointmentRegistration />} />
       <Route path="/AppointmentList" element={<AppointmentList />} />
       <Route path="/ViewAppointment" element={<ViewAppointment />} />
+      <Route path="/AddPrescription" element={<AddPrescription />} />
+      <Route path="/ViewPrescription" element={<ViewPrescription />} />
+      <Route path="/GenerateBill" element={<GenerateBill />} />
     </Route>
 </Routes>
   );

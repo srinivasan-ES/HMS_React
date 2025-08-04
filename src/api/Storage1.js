@@ -1,5 +1,3 @@
-
-
 const PATIENT_ID_KEY = 'selectedPatientId';
 
 export const setSelectedPatientId = (id) => {
