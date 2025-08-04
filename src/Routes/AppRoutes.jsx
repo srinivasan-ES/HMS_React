@@ -1,20 +1,34 @@
 import React from "react";
+import SideBarLayout from '../layout/SideBarLayout';
 import { Routes, Route } from "react-router-dom";
+import { Link, Outlet } from 'react-router-dom';
 import PatientRegistration from "../pages/patient/PatientRegistration";
 import PatientList from "../pages/patient/PatientList";
 import EditPatient from "../pages/patient/EditPatient";
 import ViewPatient from "../pages/patient/ViewPatient";
 import Home from "../pages/patient/Home";
+import DoctorRegistration from "../pages/Doctor/DoctorRegistration";
+import EditDoctor from "../pages/Doctor/EditDoctor";
+import ViewDoctor from "../pages/Doctor/ViewDoctor";
+import DoctorList from "../pages/Doctor/DoctorList";
+
+
 function AppRoutes() {
   return (
 
 <Routes>
-      <Route path="/" element={<Home />} />
+    <Route path="/" element={<SideBarLayout />} >
+      <Route index element={<Home />} />
       <Route path="/PatientRegistration" element={<PatientRegistration />} />
       <Route path="/PatientList" element={<PatientList />} />
       <Route path="/edit-patient/:id" element={<EditPatient />} />
       <Route path="/view-patient" element={<ViewPatient />} />
-    </Routes>
+      <Route path="/DoctorRegistration" element={<DoctorRegistration />} />
+      <Route path="/edit-doctor/:id" element={<EditDoctor />} />
+      <Route path="/view-doctor" element={<ViewDoctor />} />
+      <Route path="/DoctorList" element={<DoctorList />} />
+    </Route>
+</Routes>
   );
 }
 export default AppRoutes;

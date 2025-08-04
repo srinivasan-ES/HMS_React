@@ -1,0 +1,41 @@
+/* src/components/SidebarLayout.css */
+.layout {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 220px;
+  background: #f5f5f5;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar h2 {
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+.sidebar nav a,
+.sidebar nav span {
+  display: block;
+  color: #333;
+  margin-bottom: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.sidebar nav a:hover {
+  text-decoration: underline;
+}
+
+.dropdown-content {
+  padding-left: 10px;
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background: #ffffff;
+}
